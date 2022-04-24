@@ -35,9 +35,9 @@ int main(int argc, string argv[])
     {
         if ( isalpha(plainText[i]) )
         {
-            while (plainText[i] >= 'A' && plainText[i] <= 'Z')
+            while (plainText[i] >= 'A' && plainText[i] <= 'Z') //isupper
             {
-                if (plainText[i] + key > 90)
+                if (plainText[i] + key > 90) //better: ( plainText[i] - 65 + k ) % 26 + 65
                     printf("%c", plainText[i] + key - 26);
                 else
                     printf("%c", plainText[i] + key);
@@ -45,9 +45,9 @@ int main(int argc, string argv[])
                 break;
             }
 
-            while (plainText[i] >= 'a' && plainText[i] <= 'z')
+            while (plainText[i] >= 'a' && plainText[i] <= 'z') //islower
             {
-                if (plainText[i] + key > 122)
+                if (plainText[i] + key > 122) //better: ( plainText[i] - 97 + k ) % 26 + 97
                     printf("%c", plainText[i] + key - 26);
                 else
                     printf("%c", plainText[i] + key);
