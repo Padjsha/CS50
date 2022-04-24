@@ -16,7 +16,7 @@ int main(int argc, string argv[])
 
         for (int i = 0, lengthOfText = strlen(plainText) ; i < lengthOfText ; i++)
         {
-            if (isupper(plainText[i]) )   
+            if (isupper(plainText[i]) )   // if plainText[i] >= 'A' && <= 'Z'
                 printf("%c", (plainText[i] - 'A' + key) % 26 + 'A');
                 
             else if (islower(plainText[i]))
